@@ -12,6 +12,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '>=18'
+          cache: 'npm'
+      - uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: 153b623f-9c4c-4afe-b48c-bb7c5bb4d61b
       - run: make setup
       - run: make test
       - run: make lint
